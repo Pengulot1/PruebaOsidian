@@ -14,6 +14,7 @@ MVP de banca móvil del taller: app Flutter + API REST en .NET 10 + PostgreSQL.
 - [[Flutter - feature dashboard]] — cómo la app consume esos endpoints (MVVM).
 - [[Datos de prueba (seed SQL)]] — usuarios, tarjetas y movimientos de ejemplo.
 - [[Registro de cambios]] — todos los archivos nuevos y modificados, y cómo subirlos al repositorio.
+- [[A tener en cuenta]] — límites, detalles para la demo del APK y cuidados con el seed.
 
 ## Qué se hizo (13 oct 2026)
 
@@ -60,6 +61,6 @@ sequenceDiagram
 
 ## Pendientes
 
-- Las pestañas "Tarjetas", los accesos rápidos y "Ver más" de Mis Tarjetas muestran "Próximamente".
-- El `README.md` de la app sigue siendo la plantilla de Flutter.
-- Nada de esto está en un commit todavía.
+- El código de la API y de la app aún no está en un commit; los pasos están en [[Registro de cambios]].
+- Probar la app en el emulador de Android.
+- El resto de límites y pendientes está en [[A tener en cuenta]].

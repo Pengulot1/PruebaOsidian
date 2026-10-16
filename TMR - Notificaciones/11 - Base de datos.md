@@ -62,14 +62,62 @@ Una fila por **cada intento** de correo (flujos 1 y 2).
 - `TblTimeReportActividadDiaria`
 - `TblTimeReportFeriados`
 
-## Consultas útiles para revisar
+## Revisar los registros con CloudBeaver
 
+**CloudBeaver** es un cliente web de bases de datos (la versión web de DBeaver). El equipo lo usa para ver en Postgres qué notificaciones se enviaron, cuáles fallaron y cuáles se omitieron.
+
+> [!note] CloudBeaver no es un CDN, un WAF ni un proxy
+> Se conecta a la base de datos por su cuenta. El tráfico del navegador al backend **no pasa** por él, así que no afecta a SSE ni a la API.
+
+### 1. Qué se envió, qué falló y qué se omitió
 ```sql
--- Últimos envíos
-SELECT id_empleado, origen, estado, horas_faltantes, fecha_corte, fecha_envio, detalle_error
-FROM notificacion.notificacion_envio ORDER BY fecha_envio DESC LIMIT 50;
-
--- Eventos atascados o fallidos
-SELECT tipo_evento, estado, intentos, ultimo_error, fecha_creacion
-FROM notificacion.evento_outbox WHERE estado <> 'Procesado' ORDER BY fecha_creacion;
+SELECT id_empleado, origen, estado, horas_faltantes,
+       fecha_corte, fecha_envio, detalle_error, id_usuario_ejecutor
+FROM notificacion.notificacion_envio
+ORDER BY fecha_envio DESC
+LIMIT 50;
 ```
+- `estado`: `Enviado`, `Fallido` u `Omitido` (solo manuales).
+- `detalle_error`: el error si es `Fallido`, el motivo si es `Omitido`.
+- `id_usuario_ejecutor`: el líder que pidió el aviso (null en los automáticos).
+
+### 2. Resumen de un corte automático
+```sql
+SELECT estado, COUNT(*)
+FROM notificacion.notificacion_envio
+WHERE origen = 'Automatico'
+  AND fecha_corte = '2026-10-15 23:00:00+00'   -- 15/10 18:00 Ecuador
+GROUP BY estado;
+```
+`fecha_corte` se guarda en UTC: las 18:00 de Ecuador son las **23:00 UTC**.
+
+### 3. Avisos manuales de un líder
+```sql
+SELECT id_empleado, estado, detalle_error, fecha_envio
+FROM notificacion.notificacion_envio
+WHERE origen = 'Manual' AND id_usuario_ejecutor = 123   -- id del líder
+ORDER BY fecha_envio DESC;
+```
+Es lo mismo que lee `GET /api/notificaciones/estado` para el toast de Seguimiento.
+
+### 4. Eventos atascados o fallidos en el bus
+```sql
+SELECT tipo_evento, estado, intentos, ultimo_error, fecha_creacion
+FROM notificacion.evento_outbox
+WHERE estado <> 'Procesado'
+ORDER BY fecha_creacion DESC;
+```
+- `Pendiente` con `intentos > 0` → se está reintentando (cada 30 s).
+- `Fallido` → se rindió tras 5 intentos; revisar `ultimo_error`.
+
+### 5. Ver el bug del índice único
+```sql
+SELECT id_empleado, fecha_corte, estado, detalle_error, fecha_envio
+FROM notificacion.notificacion_envio
+WHERE origen = 'Automatico'
+ORDER BY id_empleado, fecha_envio;
+```
+Si un empleado tiene un `Fallido` en un corte y en `evento_outbox` aparece un `NotificacionEnviada` fallido con un error de clave duplicada (`uq_idx_notificacion_envio_auto`), es el caso #1 de [[15 - Riesgos y pendientes]]: el correo salió, pero no se pudo registrar.
+
+### 6. Con SSE (futuro)
+Sirve para comprobar que lo que el toast muestra en vivo coincide con la fila guardada en `notificacion_envio`.

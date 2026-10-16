@@ -11,67 +11,32 @@
             "id": "11db1ef13c220df9",
             "type": "leaf",
             "state": {
-              "type": "canvas",
+              "type": "split-diff-view",
               "state": {
-                "file": "Sin título 1.canvas",
-                "viewState": {
-                  "x": 0,
-                  "y": 0,
-                  "zoom": 0
-                }
+                "aFile": ".obsidian/workspace.json",
+                "bFile": ".obsidian/workspace.json",
+                "aRef": ""
               },
-              "icon": "lucide-layout-dashboard",
-              "title": "Sin título 1"
+              "icon": "diff",
+              "title": "Diff: workspace.json  (Working Tree)"
             }
           },
           {
-            "id": "6883206b5c7dd629",
+            "id": "1201f80551f158a5",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "cree un enlace.md",
+                "file": "TMR - Notificaciones/18 - Handlers de notificaciones paso a paso.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "cree un enlace"
-            }
-          },
-          {
-            "id": "ce233ed4eac13ba6",
-            "type": "leaf",
-            "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Excalidraw/Drawing 2026-10-11 22.04.17.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "Drawing 2026-10-11 22.04.17.excalidraw"
+              "title": "18 - Handlers de notificaciones paso a paso"
             }
           }
         ],
         "currentTab": 1
-      },
-      {
-        "id": "0a6b08c643b17009",
-        "type": "tabs",
-        "children": [
-          {
-            "id": "63d590a4dc2381ff",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "cree un enlace.md",
-                "mode": "source",
-                "source": false
-              },
-              "icon": "lucide-file",
-              "title": "cree un enlace"
-            }
-          }
-        ]
       }
     ],
     "direction": "vertical"
@@ -168,9 +133,9 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Sin título 2.base",
+                "file": "BancoPanda/Registro de cambios.md",
                 "linksCollapsed": false,
-                "unlinkedCollapsed": true
+                "unlinkedCollapsed": false
               },
               "icon": "links-going-out",
               "title": "Enlaces salientes"
@@ -211,7 +176,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Sin título 2.base",
+                "file": "BancoPanda/Registro de cambios.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -252,20 +217,45 @@
       "obsidian-git:Open Git source control": false
     }
   },
-  "active": "6883206b5c7dd629",
+  "active": "1201f80551f158a5",
   "lastOpenFiles": [
-    "Sin título 2.base",
-    "Sin título.md",
-    "Sin título 1.base",
-    "Sin título 1.canvas",
-    "Sin nombre",
-    "Bienvenido.md",
+    "TMR - Notificaciones/17 - Presentación - Cambios en Quartz.md",
+    "TMR - Notificaciones/18 - Handlers de notificaciones paso a paso.md",
+    "BancoPanda/BancoPanda.md",
+    "BancoPanda/Backend - cuentas, tarjetas y movimientos.md",
+    "TMR - Notificaciones/12 - Configuración (appsettings).md",
+    "TMR - Notificaciones/00 - Índice Notificaciones.md.tmp.26172.528122a20e5f",
+    "TMR - Notificaciones/18 - Handlers de notificaciones paso a paso.md.tmp.26172.20939758d0ad",
+    "TMR - Notificaciones/17 - Presentación - Cambios en Quartz.md.tmp.26172.a2a5ff9c00f8",
+    "TMR - Notificaciones/12 - Configuración (appsettings).md.tmp.25180.ac7c7da6191a",
+    "TMR - Notificaciones/14 - Mi parte (Harold).md.tmp.25180.84a3f6af8587",
+    "TMR - Notificaciones/16 - Pruebas automatizadas.md.tmp.25180.93743378fd05",
+    "TMR - Notificaciones/16 - Pruebas automatizadas.md.tmp.25180.cd9be52a7080",
+    "TMR - Notificaciones/16 - Pruebas automatizadas.md.tmp.25180.3e33df5e0140",
+    "TMR - Notificaciones/04 - Flujo 1 - Corte automático con Quartz.md.tmp.25180.e56b29aa888c",
+    "TMR - Notificaciones/00 - Índice Notificaciones.md.tmp.25180.04c37f2f73d7",
+    "TMR - Notificaciones/13 - Otros avisos fuera del módulo.md",
+    "TMR - Notificaciones/15 - Riesgos y pendientes.md",
+    "TMR - Notificaciones/07 - Envío del correo (EnviarCorreoHandler).md",
+    "TMR - Notificaciones/05 - Flujo 2 - Aviso manual del líder.md",
+    "TMR - Notificaciones/03 - Eventos y handlers.md",
+    "TMR - Notificaciones/01 - Cómo funciona (visión general).md",
+    "TMR - Notificaciones/02 - Bus de eventos y Outbox.md",
+    "TMR - Notificaciones/08 - Apprise.md",
+    "TMR - Notificaciones/11 - Base de datos.md",
+    "TMR - Notificaciones/14 - Mi parte (Harold).md",
+    "TMR - Notificaciones/00 - Índice Notificaciones.md",
+    "BancoPanda/Registro de cambios.md",
+    "BancoPanda/Guía Dashboard/04 - Dashboard - Qué endpoint alimenta cada parte.md",
+    "BancoPanda/Guía Dashboard/03 - App - Dashboard paso a paso.md",
+    "BancoPanda/Guía Dashboard/02 - API - Endpoints.md",
+    "BancoPanda/Guía Dashboard/01 - Cómo funciona Banco Panda.md",
+    "BancoPanda/Guía Dashboard/00 - Índice Banco Panda.md",
+    "BancoPanda/A tener en cuenta.md",
+    "BancoPanda/Datos de prueba (seed SQL).md",
+    "BancoPanda/Flutter - feature dashboard.md",
     "Excalidraw/Drawing 2026-10-11 22.04.17.excalidraw.md",
-    "2026-10-11.md",
-    "Sin título.canvas",
-    "Sin título.base",
-    "Excalidraw/Drawing 2026-10-11 21.54.51.excalidraw.md",
-    "cree un enlace.md",
-    "Excalidraw"
+    "Sin título 1.canvas",
+    "Sin título.canvas"
   ]
 }

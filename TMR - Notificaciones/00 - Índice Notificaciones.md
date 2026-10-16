@@ -27,6 +27,8 @@ Módulo que avisa por correo a los colaboradores que **no registraron todas sus 
 14. [[14 - Mi parte (Harold)]] — lo que me tocó, función por función.
 15. [[15 - Riesgos y pendientes]] — cosas a revisar.
 16. [[16 - Pruebas automatizadas]] — qué tests existen.
+17. [[17 - Presentación - Cambios en Quartz]] — antes vs. después, decisiones, preguntas y guion de 1 minuto.
+18. [[18 - Handlers de notificaciones paso a paso]] — los 3 handlers, qué consume cada clase y su paso a paso.
 
 ## Resumen en una tabla
 

@@ -29,6 +29,8 @@ Módulo que avisa por correo a los colaboradores que **no registraron todas sus 
 16. [[16 - Pruebas automatizadas]] — qué tests existen.
 17. [[17 - Presentación - Cambios en Quartz]] — antes vs. después, decisiones, preguntas y guion de 1 minuto.
 18. [[18 - Handlers de notificaciones paso a paso]] — los 3 handlers, qué consume cada clase y su paso a paso.
+19. [[19 - SSE - Cómo se aplicaría]] — propuesta de notificaciones en vivo con SSE: archivos, métodos y preguntas.
+20. [[20 - WebSockets y SignalR - Alternativa]] — lo mismo con SignalR, y cuándo conviene cada opción.
 
 ## Resumen en una tabla
 

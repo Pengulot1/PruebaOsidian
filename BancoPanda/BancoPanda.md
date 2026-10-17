@@ -15,6 +15,13 @@ MVP de banca móvil del taller: app Flutter + API REST en .NET 10 + PostgreSQL.
 - [[Datos de prueba (seed SQL)]] — usuarios, tarjetas y movimientos de ejemplo.
 - [[Registro de cambios]] — todos los archivos nuevos y modificados, y cómo subirlos al repositorio.
 - [[A tener en cuenta]] — límites, detalles para la demo del APK y cuidados con el seed.
+- [[Plan - transferencias, efectivo móvil y tarjetas]] — plan por fases (16 oct 2026) explicado para exponer: qué se conecta con qué.
+- [[Fase A - base de datos y API]] — lo que se hizo en el API: carpetas, tablas que usa cada endpoint y cómo funciona por dentro.
+- [[Fase B - pantallas de la app]] — pantallas nuevas, endpoints que consume cada una y carpetas de la app.
+- [[Fase C - datos de prueba, pruebas y documentación]] — seed, tests, README y `.http` del API, cómo correr todo y lo que falta.
+- [[Efectivo móvil - pantallas 1 y 2]] — rediseño (17 oct): Mi número / Otro número y pantalla con los dos códigos; qué consume y en qué carpetas está.
+- **Exposición:** [[00 - Guion de la exposición]] (carpeta `EXPOSICION DE BANCO PANDA`): repositorio, documentación, arquitectura, explicación técnica, demo y preguntas.
+- **Exposición sencilla (solo dashboard):** [[00 - Guion corto]] (carpeta `EXPOSICION SENCILLA - DASHBOARD`): qué consume, cómo funciona cada botón, el código más importante y una chuleta.
 
 ## Qué se hizo (13 oct 2026)
 
